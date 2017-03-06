@@ -1,0 +1,21 @@
+<div class="row text-right">
+      <button ng-click="editUser()" class="btn btn-primary addNewUserButton"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Új felhasználó létrehozása</button>
+</div>
+<div class="table-responsive">
+	<table class="table">
+	    <thead>
+		    <tr>
+		      <th>Név</th>
+		      <th>Felhasználónév</th>
+		      <th>E-mail</th>
+		    </tr>
+	    </thead>
+	    <tbody>               
+	      	<tr ng-repeat="user in users">
+	          <td><a ng-click="editUser(user)" href="#">{{user.name}}</a></td>
+	          <td>{{user.username}}</td>
+	          <td>{{user.email}}</td>
+	        </tr>
+	    </tbody>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+.deleteUserButton {
+	padding-top: 8px; 
+}
+
+@media (max-width: 767px) {
+  .addNewUserButton {
+  	margin: 0 15px 18px 0;
+  }
+}

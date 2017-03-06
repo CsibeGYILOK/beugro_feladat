@@ -1,0 +1,34 @@
+<div class="modal fade" id="userEditorModal" tabindex="-1" role="dialog" aria-labelledby="userEditorModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 ng-show="selectedUser" class="modal-title" id="userEditorModalLabel">Felhasználó szerkesztése</h4>
+        <h4 ng-show="!selectedUser" class="modal-title" id="userEditorModalLabel">Új felhasználó létrehozása</h4>
+      </div>
+      <div class="modal-body">
+
+            <form>
+              <div class="form-group">
+                <label for="fullName">Név</label>
+                <input type="text" class="form-control" id="fullName" ng-model="formUser.name">
+              </div>
+              <div class="form-group">
+                <label for="userName">Felhasználónév</label>
+                <input type="text" class="form-control" id="userName" ng-model="formUser.username">
+              </div>
+              <div class="form-group">
+                <label for="userEmail">E-mail</label>
+                <input type="text" class="form-control" id="userEmail" ng-model="formUser.email">
+              </div>
+            </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Bezárás</button>
+        <button type="button" class="btn btn-primary" ng-click="saveUser(formUser)">Mentés</button>
+        <a ng-show="selectedUser" ng-click="deleteUser(selectedUser)" class="deleteUserButton pull-left" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Felhasználó törlése</a>
+      </div>
+    </div>
+  </div>
+</div>
