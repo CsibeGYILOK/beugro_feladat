@@ -13,7 +13,7 @@ angular.module("userEditorApp")
 				$scope.formUser = angular.copy(user);
 			} else {
 				$scope.selectedUserIndex = "-1";
-				$scope.formUser = {name: "Maci Laci", username: "macilaci", email: "macilaci@maci.hu"};
+				$scope.formUser = {name: "", username: "", email: ""};
 			}
 			$('#userEditorModal').modal("show");
 		};
