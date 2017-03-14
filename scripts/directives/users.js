@@ -1,11 +1,13 @@
 angular.module("userEditorApp")
 	.directive("users", function() {
 		return {
-			templateUrl: "templates/users.html"
+			templateUrl: "templates/users.html",
+			controller: "mainCtrl"
 		};
 	})
-	.directive("editormodal", function() {
+	.directive("editorModal", function() {
 		return {
-			templateUrl: "templates/editorModal.html"
+			templateUrl: "templates/editorModal.html",
+			controller: "modalCtrl"
 		};
 	});

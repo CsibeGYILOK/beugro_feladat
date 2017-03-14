@@ -1,6 +1,8 @@
-<div class="row text-right">
-      <button ng-click="editUser()" class="btn btn-primary addNewUserButton"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Új felhasználó létrehozása</button>
+<div class="row text-right actionButtons">
+      <button ng-click="refreshUserList()" class="btn btn-default"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+      <button ng-click="editUser()" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Új felhasználó létrehozása</button>
 </div>
+<p>Keresés: <input type="text" ng-model="nameSearch.name"></p>
 <div class="table-responsive">
 	<table class="table">
 	    <thead>
@@ -11,11 +13,12 @@
 		    </tr>
 	    </thead>
 	    <tbody>               
-	      	<tr ng-repeat="user in users">
-	          <td><a ng-click="editUser(user)" href="#">{{user.name}}</a></td>
+	      	<tr ng-repeat="user in users | filter:nameSearch">
+	          <td><a ng-click="editUser(user, $index)" href="#">{{user.name}}</a></td>
 	          <td>{{user.username}}</td>
 	          <td>{{user.email}}</td>
 	        </tr>
 	    </tbody>
     </table>
+	 <!--<pre>{{users | json}}</pre>-->
 </div>

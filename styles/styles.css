@@ -3,7 +3,7 @@
 }
 
 @media (max-width: 767px) {
-  .addNewUserButton {
+  .actionButtons {
   	margin: 0 15px 18px 0;
   }
 }
