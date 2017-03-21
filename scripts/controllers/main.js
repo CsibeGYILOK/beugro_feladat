@@ -14,6 +14,7 @@ angular.module("userEditorApp")
 			} else {
 				$scope.selectedUserIndex = "-1";
 				$scope.formUser = {name: "", username: "", email: ""};
+				$scope.formUserEditor.fullName.$touched = false;
 			}
 			$('#userEditorModal').modal("show");
 		};

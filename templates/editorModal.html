@@ -7,26 +7,30 @@
         <h4 ng-show="!selectedUser" class="modal-title" id="userEditorModalLabel">Új felhasználó létrehozása</h4>
       </div>
       <div class="modal-body">
-
-            <form>
-              <div class="form-group">
+            <form name="formUserEditor">
+              <div class="form-group" ng-class="{'has-error': !formUserEditor.fullName.$valid && formUserEditor.fullName.$touched}">
                 <label for="fullName">Név</label>
-                <input type="text" class="form-control" id="fullName" ng-model="formUser.name">
+                <input type="text" class="form-control" name="fullName" id="fullName" ng-model="formUser.name" unique-user-name required>
+                <ul ng-messages="formUserEditor.fullName.$error" ng-show="formUserEditor.fullName.$touched" class="error-messages">
+                  <li ng-message="unique">Ilyen nevű felhasználó már szerepel a listában!</li>
+                  <li ng-message="required">A név megadása kötelező!</li>
+                </ul>
               </div>
               <div class="form-group">
                 <label for="userName">Felhasználónév</label>
-                <input type="text" class="form-control" id="userName" ng-model="formUser.username">
+                <input type="text" class="form-control" name="userName" id="userName" ng-model="formUser.username">
               </div>
               <div class="form-group">
                 <label for="userEmail">E-mail</label>
-                <input type="text" class="form-control" id="userEmail" ng-model="formUser.email">
+                <input type="text" class="form-control" name="userEmail" id="userEmail" ng-model="formUser.email">
               </div>
             </form>
+
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Bezárás</button>
-        <button type="button" class="btn btn-primary" ng-click="saveUser(formUser)">Mentés</button>
+        <button type="button" class="btn btn-primary" ng-class="{'disabled': !formUserEditor.$valid}" ng-click="formUserEditor.$valid && saveUser(formUser)">Mentés</button>
         <a ng-show="selectedUserIndex != -1" ng-click="deleteUser(selectedUser)" class="deleteUserButton pull-left" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Felhasználó törlése</a>
       </div>
     </div>

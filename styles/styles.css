@@ -1,6 +1,9 @@
 .deleteUserButton {
 	padding-top: 8px; 
 }
+.error-messages {
+	color:red;
+}
 
 @media (max-width: 767px) {
   .actionButtons {

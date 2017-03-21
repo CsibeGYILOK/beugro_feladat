@@ -1,1 +1,1 @@
-angular.module("userEditorApp", []);
+angular.module("userEditorApp", ['ngMessages']);
